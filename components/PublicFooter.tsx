@@ -5,6 +5,7 @@ import industryData from '@/lib/seo-data/industries.json';
 import solutionData from '@/lib/seo-data/solutions.json';
 import features from '@/lib/seo-data/features.json';
 import competitors from '@/lib/seo-data/competitors.json';
+import { Logo } from '@/components/Logo';
 
 const PublicFooter: React.FC = () => {
     return (
@@ -12,7 +13,9 @@ const PublicFooter: React.FC = () => {
             <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-start gap-12">
                 <div className="mb-10 lg:mb-0 lg:w-1/4">
                     <div className="flex items-center gap-3 mb-6">
-                        <div className="w-8 h-8 bg-if-purple rounded border border-white"></div>
+                        <div className="w-12 h-12 bg-white flex items-center justify-center rounded-xl border-2 border-black shadow-neo">
+                            <Logo className="w-8 h-8 text-black" />
+                        </div>
                         <span className="font-display font-bold text-2xl">InviteFlow.ai</span>
                     </div>
                     <p className="text-gray-400 text-sm leading-relaxed mb-6">
