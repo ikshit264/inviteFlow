@@ -1,0 +1,42 @@
+[
+    {
+        "slug": "canva",
+        "name": "Canva",
+        "comparison_points": [
+            "Canva requires manual drag-and-drop for every guest; InviteFlow.ai is 100% automated.",
+            "Canva layouts are static; InviteFlow.ai layouts are code-first and auto-resize for any name length.",
+            "InviteFlow.ai renders 500 invites in 30 seconds, a task that takes hours in Canva.",
+            "Canva is great for one-offs, but fails at volume."
+        ]
+    },
+    {
+        "slug": "paperless-post",
+        "name": "Paperless Post",
+        "comparison_points": [
+            "InviteFlow.ai offers deeper personalization beyond just 'name' fields (e.g., custom CTA per guest).",
+            "InviteFlow.ai allows full export of PNGs for total distribution freedom (WhatsApp, Slack, Print).",
+            "Our AI extracts event details directly from your existing Slack or Email messages.",
+            "Paperless Post locks you into their email delivery system; we give you the keys."
+        ]
+    },
+    {
+        "slug": "adobe-express",
+        "name": "Adobe Express",
+        "comparison_points": [
+            "Adobe is powerful but complex; InviteFlow.ai has zero learning curve for non-designers.",
+            "Requires significant configuration for batch jobs; we handle it out of the box.",
+            "InviteFlow.ai focuses purely on event logistics, Adobe is a generalist tool.",
+            "We infer design based on your event description, Adobe expects you to pick."
+        ]
+    },
+    {
+        "slug": "evite",
+        "name": "Evite",
+        "comparison_points": [
+            "Evite templates are recognizable and often feel 'canned'.",
+            "Limited customization options compared to our code-first CSS engine.",
+            "InviteFlow.ai is ad-free and respects your data privacy.",
+            "Evite pushes for digital delivery only; we support any format."
+        ]
+    }
+]

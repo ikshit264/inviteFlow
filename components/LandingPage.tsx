@@ -9,6 +9,7 @@ import {
    Mail, Mic, Hash, FileJson
 } from 'lucide-react';
 import Link from 'next/link';
+import PublicFooter from '@/components/PublicFooter';
 
 interface LandingPageProps {
    onGetStarted: () => void;
@@ -561,43 +562,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted, onLogin }) => {
          </section>
 
          {/* --- FOOTER --- */}
-         <footer className="bg-black text-white py-20 px-6">
-            <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start">
-               <div className="mb-10 md:mb-0">
-                  <div className="flex items-center gap-3 mb-6">
-                     <div className="w-8 h-8 bg-if-purple rounded border border-white"></div>
-                     <span className="font-display font-bold text-2xl">InviteFlow.ai</span>
-                  </div>
-                  <p className="max-w-xs text-gray-400 text-sm leading-relaxed">
-                     Redefining event design through structured data and automated rendering.
-                     <br /><br />San Francisco, CA.
-                  </p>
-               </div>
-
-               <div className="grid grid-cols-2 md:grid-cols-3 gap-16 text-sm">
-                  <div>
-                     <h5 className="font-bold mb-4 text-gray-500 uppercase tracking-widest text-xs">Product</h5>
-                     <ul className="space-y-3">
-                        <li><a href="/#features" className="hover:text-if-yellow">Features</a></li>
-                        <li><a href="#" className="hover:text-if-yellow">Templates</a></li>
-                        <li><a href="/#pricing" className="hover:text-if-yellow">Pricing</a></li>
-                     </ul>
-                  </div>
-                  <div>
-                     <h5 className="font-bold mb-4 text-gray-500 uppercase tracking-widest text-xs">Resources</h5>
-                     <ul className="space-y-3">
-                        <li><Link href="/info" className="hover:text-if-yellow">About Us</Link></li>
-                     </ul>
-                  </div>
-                  <div>
-                     <h5 className="font-bold mb-4 text-gray-500 uppercase tracking-widest text-xs">Legal</h5>
-                     <ul className="space-y-3">
-                        <li><Link href="/privacy" className="hover:text-if-yellow">Privacy</Link></li>
-                     </ul>
-                  </div>
-               </div>
-            </div>
-         </footer>
+         <PublicFooter />
 
       </div>
    );

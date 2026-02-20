@@ -1,0 +1,103 @@
+[
+    {
+        "slug": "wedding-invitations",
+        "title": "AI Personalized Wedding Invitations",
+        "primary_keyword": "AI wedding invites",
+        "pain_points": [
+            "Manually typing 200+ guest names into design templates",
+            "Layouts breaking when names are too long (e.g., 'Christopher' vs 'Jo')",
+            "Generic floral designs that lack a personal touch",
+            "High cost of custom calligraphy for every envelope/invite"
+        ],
+        "solution_summary": "InviteFlow.ai uses context-aware AI to extract wedding details and bulk-render hundreds of personalized, black-tie or casual wedding invites in seconds. No more drag-and-drop struggle. Ensure every guest feels special with their name perfectly typeset on their invitation.",
+        "faq": [
+            {
+                "question": "Can I use my own guest list?",
+                "answer": "Yes, simply upload a CSV file and InviteFlow.ai will generate a unique, personalized invitation for every guest."
+            },
+            {
+                "question": "Are the designs high resolution?",
+                "answer": "Yes, all invitations are rendered in vector-quality PNGs, perfect for sharing via WhatsApp, Email, or printing."
+            },
+            {
+                "question": "Can I customize the fonts?",
+                "answer": "Absolutely. Our AI suggests fonts based on your wedding vibe (e.g., Elegant Serif for formal, Modern Sans for casual), but you can manually override choices."
+            }
+        ]
+    },
+    {
+        "slug": "corporate-events",
+        "title": "Automated Corporate Event Invitations",
+        "primary_keyword": "bulk corporate invites",
+        "pain_points": [
+            "HR teams wasting hours on manual invitation design",
+            "Inconsistent branding across large guest lists",
+            "Difficulty managing RSVPs for 500+ attendees",
+            "Last-minute venue changes requiring a full re-do"
+        ],
+        "solution_summary": "Professional, on-brand event invitations generated from a single text prompt. Perfect for town halls, holiday parties, and networking mixers. Maintain strict brand guidelines while personalizing for every employee or client.",
+        "faq": [
+            {
+                "question": "Is InviteFlow.ai secure for company data?",
+                "answer": "We prioritize data privacy. Your guest lists are used strictly for rendering and are never shared with third parties."
+            },
+            {
+                "question": "Can I add our company logo?",
+                "answer": "Yes, Enterprise plans support custom asset uploads, including logos and watermarks."
+            }
+        ]
+    },
+    {
+        "slug": "tech-product-launches",
+        "title": "Cyberpunk & Tech Launch Invitations",
+        "primary_keyword": "tech launch invites",
+        "pain_points": [
+            "Generic templates don't fit the 'tech' or 'dev' vibe",
+            "Need for rapid iteration on launch details",
+            "Difficulty reaching developers with standard formats",
+            "Boring email blasts that get ignored"
+        ],
+        "solution_summary": "Our 'Neon' and 'Retrowave' themes are built for tech teams. Just paste your launch notes and get 1,000 unique, system-themed invites. Capture the attention of developers and early adopters with designs that speak their language.",
+        "faq": [
+            {
+                "question": "What themes work best for hackathons?",
+                "answer": "Our 'Terminal' and 'Glitch' themes are favorites for hackathons and product sprints."
+            }
+        ]
+    },
+    {
+        "slug": "birthday-parties",
+        "title": "AI Birthday Party Invitations",
+        "primary_keyword": "custom birthday invites",
+        "pain_points": [
+            "Finding a template that matches a specific theme (e.g., 'Retro 90s')",
+            "Spending money on platforms that charge per invite sent",
+            "Texting everyone individually",
+            "Forgeting to include RSVP details"
+        ],
+        "solution_summary": "Whether it's a 1st birthday or a 50th bash, InviteFlow.ai creates fun, thematic invites instantly. Describe your theme ('Dinosaur Jungle', 'Space Disco') and watch the AI generate the perfect visuals.",
+        "faq": [
+            {
+                "question": "Is there a free plan?",
+                "answer": "Yes! Our Hobbyist plan is perfect for personal events like birthdays, allowing up to 50 guests for free."
+            }
+        ]
+    },
+    {
+        "slug": "charity-galas",
+        "title": "Elegant Fundraising & Gala Invitations",
+        "primary_keyword": "gala invitation software",
+        "pain_points": [
+            "Need for ultra-high-end aesthetics without the agency price tag",
+            "Personalizing invites for high-value donors",
+            "Managing complex seating charts and ticket tiers"
+        ],
+        "solution_summary": "Create sophisticated, black-tie ready invitations that respect the gravity of your cause. Personalize typically expensive design elements for every donor to increase engagement and turnout.",
+        "faq": [
+            {
+                "question": "Can I print these invitations?",
+                "answer": "Yes, our exports are high-DPI and print-ready. You can send the PNGs to any local print shop."
+            }
+        ]
+    }
+]

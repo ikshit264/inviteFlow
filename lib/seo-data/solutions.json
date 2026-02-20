@@ -4,8 +4,8 @@
         "problem": "The Drag-and-Drop struggle of legacy design tools.",
         "title": "Why Manual Design is Dying for Event Invitations",
         "primary_keyword": "automated invitation design",
-        "why_fails": "Manual tools are slow, error-prone, and don't scale. Changing one date requires 100 manual edits.",
-        "how_solves": "InviteFlow.ai replaces the canvas with a code-first rendering engine. Change once, update thousands.",
+        "why_fails": "Manual tools are slow, error-prone, and don't scale. Changing one date requires 100 manual edits to 100 separate image files.",
+        "how_solves": "InviteFlow.ai replaces the canvas with a code-first rendering engine. Change once, update thousands of unique invitations instantly.",
         "cta": "Escape Drag and Drop"
     },
     {
@@ -13,8 +13,26 @@
         "problem": "Guest list fragmentation and invitation mismatch.",
         "title": "Automated Personalized Guest Lists",
         "primary_keyword": "guest list automation",
-        "why_fails": "Managing CSVs and design templates separately leads to mismatched names and broken layouts.",
+        "why_fails": "Managing CSVs and design templates separately leads to mismatched names and broken layouts (e.g., 'Christopher' overflowing a text box).",
         "how_solves": "InviteFlow.ai integrates directly with your guest lists, ensuring every design is mathematically perfect for the name it carries.",
         "cta": "Sync Your Guest List"
+    },
+    {
+        "slug": "last-minute-changes",
+        "problem": "Panic when event details change at the last minute.",
+        "title": "Crisis-Proof Your Event Planning",
+        "primary_keyword": "last minute invitation edits",
+        "why_fails": "Venue double-booked? Time change? Re-sending updated invites manually is a nightmare and looks unprofessional.",
+        "how_solves": "Update the core details in InviteFlow.ai and re-render the entire guest list in seconds. Communicate changes clearly and rapidly.",
+        "cta": "Handle Changes Instantly"
+    },
+    {
+        "slug": "brand-consistency",
+        "problem": "Inconsistent branding across multiple event communications.",
+        "title": "Unified Brand Identity for Events",
+        "primary_keyword": "brand consistent invitations",
+        "why_fails": "Different team members using different templates creates a messy brand image for your organization.",
+        "how_solves": "Centralize your brand fonts and colors. InviteFlow.ai enforces these rules across every invitation generated, no matter who creates it.",
+        "cta": "Unify Your Brand"
     }
 ]

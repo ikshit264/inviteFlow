@@ -4,8 +4,8 @@
         "industry": "Professional Event Planners",
         "title": "Scaling Event Design for Professional Planners",
         "primary_keyword": "event planning automation",
-        "problem": "Manual invitation management is a bottleneck for high-volume event planners.",
-        "solution": "InviteFlow.ai acts as a design assistant that handles the repetitive work of personalization and rendering.",
+        "problem": "Manual invitation management is a bottleneck for high-volume event planners. Clients demand custom designs, but editing 500 names is tedious.",
+        "solution": "InviteFlow.ai acts as a design assistant that handles the repetitive work of personalization and rendering, freeing you to focus on strategy.",
         "cta": "Start Automating Your Events"
     },
     {
@@ -13,8 +13,35 @@
         "industry": "HR & People Operations",
         "title": "Personalized Employee Engagement Invitations",
         "primary_keyword": "HR event tools",
-        "problem": "HR teams struggle to create high-quality, personalized invitations for team bonding and all-hands ceremonies.",
-        "solution": "Generate bulk invitations for the entire company in minutes, ensuring every employee feels personally invited.",
+        "problem": "HR teams struggle to create high-quality, personalized invitations for team bonding and all-hands ceremonies. Generic emails get ignored.",
+        "solution": "Generate bulk invitations for the entire company in minutes, ensuring every employee feels personally invited and valued.",
         "cta": "Engage Your Team Today"
+    },
+    {
+        "slug": "non-profits",
+        "industry": "Non-Profit Organizations",
+        "title": "Donor Engagement for Non-Profits",
+        "primary_keyword": "fundraising invitation software",
+        "problem": "Limited budgets and volunteer time make high-touch donor outreach difficult. Mass emails feel impersonal and yield low donations.",
+        "solution": "Create VIP-quality, personalized invitations for every donor without the agency cost. Increase attendance and donations with tailored messaging.",
+        "cta": "Boost Your Fundraising"
+    },
+    {
+        "slug": "universities",
+        "industry": "Universities & Alumni Relations",
+        "title": "Alumni Event Management at Scale",
+        "primary_keyword": "alumni event software",
+        "problem": "Coordinating reunions and galas for thousands of alumni involves manual data entry and generic mail merges.",
+        "solution": "Sync your alumni database (CSV) and generate thousands of custom invitations that reference graduation year or major automatically.",
+        "cta": "Connect with Alumni"
+    },
+    {
+        "slug": "real-estate",
+        "industry": "Real Estate Agents",
+        "title": "Open House & Client Appreciation Invites",
+        "primary_keyword": "real estate marketing tools",
+        "problem": "Agents need to stay top-of-mind with past clients but lack the design skills to create frequent, professional touchpoints.",
+        "solution": "Quickly generate branded 'Just Listed' or 'Client Appreciation' party invites. Personalize for every homeowner in your farm area.",
+        "cta": "Market Your Listings"
     }
 ]

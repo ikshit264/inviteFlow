@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import PublicNavbar from '@/components/PublicNavbar';
 import PublicFooter from '@/components/PublicFooter';
-import productData from '@/lib/seo-data/products/inviteflow.json';
+import useCases from '@/lib/seo-data/use-cases.json';
 import Link from 'next/link';
 
 interface Props {
@@ -10,14 +10,14 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-    return productData.use_cases.map((uc) => ({
+    return useCases.map((uc) => ({
         slug: uc.slug,
     }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { slug } = await params;
-    const useCase = productData.use_cases.find((uc) => uc.slug === slug);
+    const useCase = useCases.find((uc) => uc.slug === slug);
     const baseUrl = process.env.BASE_URL || 'https://inviteflow.ai';
 
     if (!useCase) return {};
@@ -38,33 +38,47 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function UseCasePage({ params }: Props) {
     const { slug } = await params;
-    const useCase = productData.use_cases.find((uc) => uc.slug === slug);
+    const useCase = useCases.find((uc) => uc.slug === slug);
 
     if (!useCase) notFound();
 
-    const jsonLd = {
+    const breadcrumbLd = {
         "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": useCase.title,
-        "description": useCase.solution_summary,
-        "mainEntity": {
-            "@type": "FAQPage",
-            "mainEntity": useCase.faq.map(f => ({
-                "@type": "Question",
-                "name": f.question,
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": f.answer
-                }
-            }))
-        }
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://inviteflow.ai"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": useCase.title,
+                "item": `https://inviteflow.ai/use-cases/${slug}`
+            }
+        ]
+    };
+
+    const faqLd = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": useCase.faq.map(f => ({
+            "@type": "Question",
+            "name": f.question,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": f.answer
+            }
+        }))
     };
 
     return (
         <div className="min-h-screen bg-if-cream font-sans text-gray-900 selection:bg-if-purple selection:text-white flex flex-col">
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+                dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbLd, faqLd]) }}
             />
             <PublicNavbar />
 
@@ -125,7 +139,7 @@ export default async function UseCasePage({ params }: Props) {
                     <div className="p-6 bg-white border-2 border-black rounded-2xl shadow-neo-sm">
                         <h4 className="font-bold text-gray-400 uppercase text-xs mb-4">Explore More</h4>
                         <div className="flex flex-col gap-2">
-                            {productData.use_cases.filter(uc => uc.slug !== slug).map(uc => (
+                            {useCases.filter(uc => uc.slug !== slug).map(uc => (
                                 <Link key={uc.slug} href={`/use-cases/${uc.slug}`} className="font-bold hover:text-if-purple-dark underline">
                                     {uc.title}
                                 </Link>

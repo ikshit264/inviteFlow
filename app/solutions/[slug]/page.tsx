@@ -38,8 +38,31 @@ export default async function SolutionPage({ params }: Props) {
 
     if (!sol) notFound();
 
+    const breadcrumbLd = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://inviteflow.ai"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": sol.title,
+                "item": `https://inviteflow.ai/solutions/${slug}`
+            }
+        ]
+    };
+
     return (
         <div className="min-h-screen bg-if-cream font-sans text-gray-900 selection:bg-if-purple selection:text-white flex flex-col">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+            />
             <PublicNavbar />
 
             <main className="pt-32 pb-20 px-6 max-w-4xl mx-auto grow">

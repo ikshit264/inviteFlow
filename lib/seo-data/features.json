@@ -1,0 +1,27 @@
+[
+    {
+        "slug": "ai-personalization",
+        "title": "AI-Driven Personalization Engine",
+        "description": "Our LLM-based engine analyzes your event text to infer tone, style, and essential logistics automatically. Just paste a message and get a design."
+    },
+    {
+        "slug": "bulk-rendering",
+        "title": "High-Speed Bulk Rendering",
+        "description": "Leverage a cluster of headless browsers to generate hundreds of invitations simultaneously without quality loss. Perfect for last-minute changes."
+    },
+    {
+        "slug": "context-aware-design",
+        "title": "Context-Aware Design Logic",
+        "description": "Our AI understands if your event is formal, casual, or themed (e.g., 'Retro 80s') and applies the perfect font palette automatically."
+    },
+    {
+        "slug": "smart-guest-management",
+        "title": "Smart Guest Management",
+        "description": "Upload any messy CSV and our system will clean, format, and prepare every name for rendering."
+    },
+    {
+        "slug": "multi-format-export",
+        "title": "Cross-Platform Export",
+        "description": "Get high-res PNGs for Instagram, PDFs for printing, or optimized JPEGs for email. Your invites, your way."
+    }
+]

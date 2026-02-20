@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import PublicNavbar from '@/components/PublicNavbar';
 import PublicFooter from '@/components/PublicFooter';
-import productData from '@/lib/seo-data/products/inviteflow.json';
+import competitors from '@/lib/seo-data/competitors.json';
 import Link from 'next/link';
 import { Check, X } from 'lucide-react';
 
@@ -11,14 +11,14 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-    return productData.competitors.map((comp) => ({
+    return competitors.map((comp) => ({
         competitor: comp.slug,
     }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { competitor } = await params;
-    const comp = productData.competitors.find((c) => c.slug === competitor);
+    const comp = competitors.find((c) => c.slug === competitor);
     const baseUrl = process.env.BASE_URL || 'https://inviteflow.ai';
 
     if (!comp) return {};
@@ -34,12 +34,35 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ComparisonPage({ params }: Props) {
     const { competitor } = await params;
-    const comp = productData.competitors.find((c) => c.slug === competitor);
+    const comp = competitors.find((c) => c.slug === competitor);
 
     if (!comp) notFound();
 
+    const breadcrumbLd = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://inviteflow.ai"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": `InviteFlow vs ${comp.name}`,
+                "item": `https://inviteflow.ai/vs/${competitor}`
+            }
+        ]
+    };
+
     return (
         <div className="min-h-screen bg-if-cream font-sans text-gray-900 selection:bg-if-purple selection:text-white flex flex-col">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+            />
             <PublicNavbar />
 
             <main className="pt-32 pb-20 px-6 max-w-5xl mx-auto grow">
@@ -107,7 +130,7 @@ export default async function ComparisonPage({ params }: Props) {
 
                 {/* Link back to other comparisons */}
                 <div className="mt-20 pt-8 border-t-2 border-black flex flex-wrap gap-8 justify-center">
-                    {productData.competitors.filter(c => c.slug !== competitor).map(c => (
+                    {competitors.filter(c => c.slug !== competitor).map(c => (
                         <Link key={c.slug} href={`/vs/${c.slug}`} className="font-bold text-gray-500 hover:text-black hover:underline">
                             vs {c.name}
                         </Link>

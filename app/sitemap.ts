@@ -1,26 +1,28 @@
 import { MetadataRoute } from 'next';
-import productData from '@/lib/seo-data/products/inviteflow.json';
+import useCases from '@/lib/seo-data/use-cases.json';
+import competitors from '@/lib/seo-data/competitors.json';
+import features from '@/lib/seo-data/features.json';
 import industryData from '@/lib/seo-data/industries.json';
 import solutionData from '@/lib/seo-data/solutions.json';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = process.env.BASE_URL || 'https://inviteflow.ai';
 
-    const useCaseRoutes = productData.use_cases.map((uc) => ({
+    const useCaseRoutes = useCases.map((uc) => ({
         url: `${baseUrl}/use-cases/${uc.slug}`,
         lastModified: new Date(),
         changeFrequency: 'monthly' as const,
         priority: 0.8,
     }));
 
-    const comparisonRoutes = productData.competitors.map((comp) => ({
+    const comparisonRoutes = competitors.map((comp) => ({
         url: `${baseUrl}/vs/${comp.slug}`,
         lastModified: new Date(),
         changeFrequency: 'monthly' as const,
         priority: 0.7,
     }));
 
-    const featureRoutes = productData.features.map((f) => ({
+    const featureRoutes = features.map((f) => ({
         url: `${baseUrl}/features/${f.slug}`,
         lastModified: new Date(),
         changeFrequency: 'monthly' as const,
@@ -65,6 +67,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/use-cases`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.9,
+        },
+        {
+            url: `${baseUrl}/solutions`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.9,
+        },
+        {
+            url: `${baseUrl}/industries`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.9,
+        },
+        {
+            url: `${baseUrl}/vs`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.9,
         },
         ...useCaseRoutes,
         ...comparisonRoutes,

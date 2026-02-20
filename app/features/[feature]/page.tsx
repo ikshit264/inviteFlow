@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import PublicNavbar from '@/components/PublicNavbar';
 import PublicFooter from '@/components/PublicFooter';
-import productData from '@/lib/seo-data/products/inviteflow.json';
+import features from '@/lib/seo-data/features.json';
 import Link from 'next/link';
 import { Sparkles, Terminal, Layers } from 'lucide-react';
 
@@ -11,14 +11,14 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-    return productData.features.map((f) => ({
+    return features.map((f) => ({
         feature: f.slug,
     }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { feature } = await params;
-    const f = productData.features.find((feat) => feat.slug === feature);
+    const f = features.find((feat) => feat.slug === feature);
     const baseUrl = process.env.BASE_URL || 'https://inviteflow.ai';
 
     if (!f) return {};
@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function FeaturePage({ params }: Props) {
     const { feature } = await params;
-    const f = productData.features.find((feat) => feat.slug === feature);
+    const f = features.find((feat) => feat.slug === feature);
 
     if (!f) notFound();
 
@@ -46,8 +46,31 @@ export default async function FeaturePage({ params }: Props) {
         }
     };
 
+    const breadcrumbLd = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://inviteflow.ai"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": f.title,
+                "item": `https://inviteflow.ai/features/${feature}`
+            }
+        ]
+    };
+
     return (
         <div className="min-h-screen bg-if-cream font-sans text-gray-900 selection:bg-if-purple selection:text-white flex flex-col">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+            />
             <PublicNavbar />
 
             <main className="pt-32 pb-20 px-6 max-w-4xl mx-auto grow">
@@ -93,7 +116,7 @@ export default async function FeaturePage({ params }: Props) {
                 </div>
 
                 <div className="mt-20 flex flex-wrap gap-4 justify-center">
-                    {productData.features.filter(feat => feat.slug !== feature).map(feat => (
+                    {features.filter(feat => feat.slug !== feature).map(feat => (
                         <Link key={feat.slug} href={`/features/${feat.slug}`} className="px-6 py-2 bg-white border-2 border-black rounded-full font-bold hover:bg-if-purple hover:text-white transition-all">
                             Explore {feat.title}
                         </Link>
