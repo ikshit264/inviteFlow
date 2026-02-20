@@ -1,0 +1,79 @@
+generator client {
+  provider   = "prisma-client-js"
+  engineType = "library"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
+  email       String    @unique
+  password    String
+  name        String
+  plan        String    @default("FREE")
+  planId      String?   @db.ObjectId
+  planDetails Plan?     @relation(fields: [planId], references: [id])
+  events      Event[]
+  payments    Payment[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Plan {
+  id                String @id @default(auto()) @map("_id") @db.ObjectId
+  name              String @unique // FREE, PAID
+  maxEvents         Int
+  maxGuestsPerEvent Int
+  price             Float
+  users             User[]
+}
+
+model Event {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  title         String
+  description   String
+  date          String
+  time          String
+  location      String
+  tone          String
+  hostName      String
+  templateId    String
+  customization Json?
+  userId        String   @db.ObjectId
+  user          User     @relation(fields: [userId], references: [id])
+  guests        Guest[]
+  status        String   @default("Draft") // Draft, Sent
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model Guest {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  name      String
+  email     String
+  status    String   @default("pending") // pending, generated
+  eventId   String   @db.ObjectId
+  event     Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+}
+
+model Payment {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  amount    Float
+  currency  String   @default("USD")
+  status    String // completed, pending, failed
+  dodoId    String   @unique
+  productId String
+  userId    String   @db.ObjectId
+  user      User     @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+}
+
+model Product {
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  productId String @unique
+  name      String // internal plan name e.g. "PRO"
+}

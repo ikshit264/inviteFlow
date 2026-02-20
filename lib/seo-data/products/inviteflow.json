@@ -1,0 +1,97 @@
+{
+    "product_name": "InviteFlow.ai",
+    "primary_keywords": [
+        "AI invitation generator",
+        "bulk personalized invites",
+        "automated event design"
+    ],
+    "use_cases": [
+        {
+            "slug": "wedding-invitations",
+            "title": "AI Personalized Wedding Invitations",
+            "primary_keyword": "AI wedding invites",
+            "pain_points": [
+                "Manually typing 200+ guest names into design templates",
+                "Layouts breaking when names are too long",
+                "Generic designs that lack a personal touch"
+            ],
+            "solution_summary": "InviteFlow.ai uses context-aware AI to extract wedding details and bulk-render hundreds of personalized, black-tie or casual wedding invites in seconds. No more drag-and-drop struggle.",
+            "faq": [
+                {
+                    "question": "Can I use my own guest list?",
+                    "answer": "Yes, simply upload a CSV file and InviteFlow.ai will generate a unique, personalized invitation for every guest."
+                },
+                {
+                    "question": "Are the designs high resolution?",
+                    "answer": "Yes, all invitations are rendered in vector-quality PNGs, perfect for sharing via WhatsApp, Email, or printing."
+                }
+            ]
+        },
+        {
+            "slug": "corporate-events",
+            "title": "Automated Corporate Event Invitations",
+            "primary_keyword": "bulk corporate invites",
+            "pain_points": [
+                "HR teams wasting hours on manual invitation design",
+                "Inconsistent branding across large guest lists",
+                "difficulty managing RSVPs for 500+ attendees"
+            ],
+            "solution_summary": "Professional, on-brand event invitations generated from a single text prompt. Perfect for town halls, holiday parties, and networking mixers.",
+            "faq": [
+                {
+                    "question": "Is InviteFlow.ai secure for company data?",
+                    "answer": "We prioritize data privacy. Your guest lists are used strictly for rendering and are never shared with third parties."
+                }
+            ]
+        },
+        {
+            "slug": "tech-product-launches",
+            "title": "Cyberpunk & Tech Launch Invitations",
+            "primary_keyword": "tech launch invites",
+            "pain_points": [
+                "Generic templates don't fit the 'tech' or 'dev' vibe",
+                "Need for rapid iteration on launch details",
+                "Difficulty reaching developers with standard formats"
+            ],
+            "solution_summary": "Our 'Neon' and 'Retrowave' themes are built for tech teams. Just paste your launch notes and get 1,000 unique, system-themed invites.",
+            "faq": []
+        }
+    ],
+    "competitors": [
+        {
+            "slug": "canva",
+            "name": "Canva",
+            "comparison_points": [
+                "Canva requires manual drag-and-drop for every guest; InviteFlow.ai is 100% automated.",
+                "Canva layouts are static; InviteFlow.ai layouts are code-first and auto-resize for any name length.",
+                "InviteFlow.ai renders 500 invites in 30 seconds, a task that takes hours in Canva."
+            ]
+        },
+        {
+            "slug": "paperless-post",
+            "name": "Paperless Post",
+            "comparison_points": [
+                "InviteFlow.ai offers deeper personalization beyond just 'name' fields.",
+                "InviteFlow.ai allows full export of PNGs for total distribution freedom.",
+                "Our AI extracts event details directly from your existing Slack or Email messages."
+            ]
+        }
+    ],
+    "features": [
+        {
+            "slug": "ai-personalization",
+            "title": "AI-Driven Personalization Engine",
+            "description": "Our LLM-based engine analyzes your event text to infer tone, style, and essential logistics automatically."
+        },
+        {
+            "slug": "bulk-rendering",
+            "title": "High-Speed Bulk Rendering",
+            "description": "Leverage a cluster of headless browsers to generate hundreds of invitations simultaneously without quality loss."
+        }
+    ],
+    "internal_link_targets": [
+        "/auth",
+        "/info",
+        "/privacy"
+    ]
+}

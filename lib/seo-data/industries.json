@@ -1,0 +1,20 @@
+[
+    {
+        "slug": "event-planners",
+        "industry": "Professional Event Planners",
+        "title": "Scaling Event Design for Professional Planners",
+        "primary_keyword": "event planning automation",
+        "problem": "Manual invitation management is a bottleneck for high-volume event planners.",
+        "solution": "InviteFlow.ai acts as a design assistant that handles the repetitive work of personalization and rendering.",
+        "cta": "Start Automating Your Events"
+    },
+    {
+        "slug": "hr-teams",
+        "industry": "HR & People Operations",
+        "title": "Personalized Employee Engagement Invitations",
+        "primary_keyword": "HR event tools",
+        "problem": "HR teams struggle to create high-quality, personalized invitations for team bonding and all-hands ceremonies.",
+        "solution": "Generate bulk invitations for the entire company in minutes, ensuring every employee feels personally invited.",
+        "cta": "Engage Your Team Today"
+    }
+]
