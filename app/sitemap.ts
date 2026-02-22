@@ -6,7 +6,7 @@ import industryData from '@/lib/seo-data/industries.json';
 import solutionData from '@/lib/seo-data/solutions.json';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = process.env.BASE_URL || 'https://inviteflow.ai';
+    const baseUrl = process.env.BASE_URL || 'https://inviteflow.entrext.com';
 
     const useCaseRoutes = useCases.map((uc) => ({
         url: `${baseUrl}/use-cases/${uc.slug}`,
