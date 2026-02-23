@@ -58,8 +58,8 @@ const Workspace: React.FC<WorkspaceProps> = ({ onBackToDashboard }) => {
     // If a specific guest is provided, we need to ensure the preview is showing them
     if (guestToDownload && guestToDownload.id !== activePreviewGuest.id) {
       setPreviewGuest(guestToDownload);
-      // Give it a moment to render
-      await new Promise(r => setTimeout(r, 150));
+      // Wait for React to re-render the preview with the new guest name
+      await new Promise(r => setTimeout(r, 500));
     }
 
     const node = document.getElementById('invite-card-preview');
@@ -257,6 +257,7 @@ const Workspace: React.FC<WorkspaceProps> = ({ onBackToDashboard }) => {
                   guestName={activePreviewGuest.name}
                   templateId={selectedTemplate}
                   customization={customization}
+                  enableCapture={true}
                 />
               </div>
             ) : (

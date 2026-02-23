@@ -5,6 +5,7 @@ import { User, Project } from '../types';
 import { Plus, Calendar, Users, LogOut, Search, User as UserIcon, LayoutDashboard, ChevronDown, Sparkles } from 'lucide-react';
 import ProfileView from './ProfileView';
 import UpgradeModal from './UpgradeModal';
+import { Logo } from './Logo';
 
 interface DashboardProps {
    user: User;
@@ -67,8 +68,8 @@ const Dashboard: React.FC<DashboardProps> = ({ user: initialUser, onCreateNew, o
    const renderNavbar = () => (
       <header className="h-20 border-b-2 border-black bg-white flex items-center justify-between px-6 md:px-12 sticky top-0 z-50">
          <div className="flex items-center gap-3 group cursor-pointer" onClick={() => setCurrentView('home')}>
-            <div className="w-10 h-10 bg-black text-white flex items-center justify-center rounded-lg border-2 border-transparent group-hover:border-if-purple group-hover:bg-if-purple transition-all shadow-[4px_4px_0px_0px_rgba(139,92,246,1)]">
-               <Sparkles size={20} fill="currentColor" />
+            <div className="w-10 h-10 bg-white flex items-center justify-center rounded-lg border-2 border-black group-hover:bg-if-purple transition-all shadow-neo transform group-hover:rotate-3">
+               <Logo className="w-6 h-6 text-black" />
             </div>
             <span className="font-display font-bold text-2xl tracking-tighter">InviteFlow.ai</span>
          </div>

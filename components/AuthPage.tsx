@@ -2,8 +2,9 @@
 
 import React, { useState } from 'react';
 import { User } from '../types';
-import { ArrowRight, Loader2, Home, Sparkles } from 'lucide-react';
+import { ArrowRight, Loader2, Home } from 'lucide-react';
 import Link from 'next/link';
+import { Logo } from './Logo';
 
 interface AuthPageProps {
   onLoginSuccess: (user: User) => void;
@@ -56,8 +57,8 @@ const AuthPage: React.FC<AuthPageProps> = ({ onLoginSuccess }) => {
 
       <div className="w-full max-w-md bg-white border-2 border-black rounded-3xl p-8 shadow-neo-lg">
         <div className="text-center mb-8">
-          <div className="w-12 h-12 bg-black text-white flex items-center justify-center rounded-xl border-2 border-black shadow-neo-sm mx-auto mb-4">
-            <Sparkles size={24} fill="currentColor" />
+          <div className="w-12 h-12 bg-white flex items-center justify-center rounded-xl border-2 border-black shadow-neo transform rotate-3 mx-auto mb-4">
+            <Logo className="w-8 h-8 text-black" />
           </div>
           <h2 className="text-3xl font-display font-bold">{isSignUp ? 'Create Account' : 'Welcome Back'}</h2>
           <p className="text-gray-500 mt-2">

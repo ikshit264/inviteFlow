@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import PublicFooter from '@/components/PublicFooter';
+import { Logo } from '@/components/Logo';
 
 interface LandingPageProps {
    onGetStarted: () => void;
@@ -325,8 +326,8 @@ const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted, onLogin }) => {
          <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/80 backdrop-blur-md border-b-2 border-black py-4' : 'bg-transparent py-6'} px-6 md:px-12`}>
             <div className="max-w-7xl mx-auto flex items-center justify-between">
                <div className="flex items-center gap-3 group cursor-pointer" onClick={() => window.scrollTo(0, 0)}>
-                  <div className="w-10 h-10 bg-black text-white flex items-center justify-center rounded-lg border-2 border-transparent group-hover:border-if-purple group-hover:bg-if-purple transition-all shadow-[4px_4px_0px_0px_rgba(139,92,246,1)]">
-                     <Sparkles size={20} fill="currentColor" />
+                  <div className="w-12 h-12 bg-white flex items-center justify-center rounded-xl border-2 border-black group-hover:bg-if-yellow transition-all shadow-neo transform group-hover:rotate-3">
+                     <Logo className="w-8 h-8 text-black" />
                   </div>
                   <span className="font-display font-bold text-2xl tracking-tighter">InviteFlow.ai</span>
                </div>

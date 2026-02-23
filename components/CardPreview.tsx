@@ -9,6 +9,7 @@ interface CardPreviewProps {
   guestName: string;
   templateId: TemplateId;
   customization: TemplateCustomization;
+  enableCapture?: boolean;
 }
 
 // Helper to get color values based on palette
@@ -35,7 +36,7 @@ const getFont = (style: TemplateCustomization['fontStyle']) => {
   }
 }
 
-const CardPreview: React.FC<CardPreviewProps> = ({ data, guestName, templateId, customization }) => {
+const CardPreview: React.FC<CardPreviewProps> = ({ data, guestName, templateId, customization, enableCapture = false }) => {
   const c = getColors(customization.colorPalette);
   const f = getFont(customization.fontStyle);
   const [randomId, setRandomId] = useState('');
@@ -516,16 +517,19 @@ const CardPreview: React.FC<CardPreviewProps> = ({ data, guestName, templateId, 
     <div className="w-full max-w-[400px] aspect-3/4 mx-auto group relative">
       {/* 
           Capture Node: 
+          - Only rendered when enableCapture is true (main preview only)
           - Always 400x533 (Fixed)
           - No scales/transitions
-          - Hidden from view
+          - Hidden off-screen from view
           - Stripped of external shadows
        */}
-      <div className="fixed top-0 left-0 pointer-events-none opacity-0 z-[-1] overflow-hidden" style={{ width: '400px', height: '533px' }}>
-        <div id="invite-card-preview" className="w-[400px] h-[533px] bg-white">
-          {renderContent(true)}
+      {enableCapture && (
+        <div className="fixed pointer-events-none z-[-1]" style={{ width: '400px', height: '533px', left: '-9999px', top: '0px' }}>
+          <div id="invite-card-preview" className="w-[400px] h-[533px] bg-white">
+            {renderContent(true)}
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Visible Preview */}
       <div className="w-full h-full transform transition-all duration-500 group-hover:scale-[1.02] shadow-2xl rounded-3xl overflow-hidden bg-white">
