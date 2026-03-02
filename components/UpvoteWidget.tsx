@@ -91,7 +91,7 @@ export default function UpvoteWidget() {
                 data-position="right"
                 data-theme="light"
             />
-            <Script src="http://upvote.entrext.com/widget.js" strategy="afterInteractive" />
+            <Script src="https://upvote.entrext.com/widget.js" strategy="afterInteractive" />
         </>
     );
 }
