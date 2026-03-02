@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit, Space_Grotesk } from "next/font/google";
 import "./globals.css";
-import UpvoteWidgetWrapper from "@/components/UpvoteWidgetWrapper";
+import UpvoteWidget from "@/components/UpvoteWidget";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -112,7 +112,7 @@ export default function RootLayout({
         className={`${outfit.variable} ${spaceGrotesk.variable} antialiased`}
       >
         {children}
-        <UpvoteWidgetWrapper />
+        <UpvoteWidget />
       </body>
     </html>
   );

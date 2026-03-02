@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { User } from '../types';
 import { ArrowRight, Loader2, Home } from 'lucide-react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { Logo } from './Logo';
 
 interface AuthPageProps {
@@ -11,6 +12,7 @@ interface AuthPageProps {
 }
 
 const AuthPage: React.FC<AuthPageProps> = ({ onLoginSuccess }) => {
+  const router = useRouter();
   const [isSignUp, setIsSignUp] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -36,6 +38,7 @@ const AuthPage: React.FC<AuthPageProps> = ({ onLoginSuccess }) => {
         throw new Error(data.error || 'Authentication failed');
       }
 
+      router.refresh();
       onLoginSuccess(data.user);
     } catch (err: any) {
       setError(err.message);
@@ -49,6 +52,7 @@ const AuthPage: React.FC<AuthPageProps> = ({ onLoginSuccess }) => {
       {/* Home Button */}
       <Link
         href="/"
+        target='_self'
         className="absolute top-6 left-6 z-10 flex items-center gap-2 font-bold text-gray-600 hover:text-black transition-colors bg-white px-4 py-2 border-2 border-black rounded-xl shadow-neo hover:shadow-neo-sm hover:translate-x-[2px] hover:translate-y-[2px] active:shadow-none"
       >
         <Home size={18} />
